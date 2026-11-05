@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+data/
+weights/
+.DS_Store
+.test-run*/
+.verification/
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.log

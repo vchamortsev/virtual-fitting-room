@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Виртуальная примерочная для магазина одежды</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/landing.css?v=13">
+</head>
+<body>
+  <header class="nav">
+    <a class="mark" href="/">Примерочная</a>
+    <nav>
+      <a href="#examples">Референсы</a>
+      <a href="#how">Как это работает</a>
+      <a href="#pricing">Стоимость</a>
+      <a class="nav-try" href="/demo">Попробовать</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <video class="hero-film" autoplay muted loop playsinline>
+      <source src="/static/references/story.mp4?v=11" type="video/mp4">
+    </video>
+    <div class="hero-copy">
+      <h1>Покупатель видит вещь на себе до заказа</h1>
+      <p>Фото человека и карточка товара. На сайте появляется примерка. Оплата пакетом примерок или процентом только с тех заказов, которые после примерки оплатили.</p>
+      <div class="hero-actions">
+        <a class="button" href="#request">Оставить заявку</a>
+        <a class="button button-quiet" href="/demo">Попробовать</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="examples" class="block">
+      <p class="eyebrow">Референсы</p>
+      <h2>Три примерки</h2>
+      <p class="lede">В каждом ряду слева модель, в центре вещь с карточки, справа результат на той же модели. Верх, низ и платье. Это студийные кадры, не фото покупателя магазина.</p>
+      <div class="sets">
+        <div class="set">
+          <p class="set-name">Блуза</p>
+          <div class="trio">
+            <figure>
+              <img src="/static/references/person.jpg" alt="Модель в серой футболке">
+              <figcaption>Модель</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/references/garment.jpg" alt="Ржавая блуза на белом фоне">
+              <figcaption>Вещь</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/references/tryon.png" alt="Та же модель в ржавой блузе">
+              <figcaption>Примерка</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="set">
+          <p class="set-name">Брюки</p>
+          <div class="trio">
+            <figure>
+              <img src="/static/references/person-2.jpg" alt="Модель в серой футболке и чёрных брюках">
+              <figcaption>Модель</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/references/garment-2.jpg" alt="Бежевые брюки на белом фоне">
+              <figcaption>Вещь</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/references/tryon-2.png" alt="Та же модель в бежевых брюках">
+              <figcaption>Примерка</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="set">
+          <p class="set-name">Платье</p>
+          <div class="trio">
+            <figure>
+              <img src="/static/references/person-3.jpg" alt="Модель в белой футболке">
+              <figcaption>Модель</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/references/garment-3.jpg" alt="Чёрное платье на белом фоне">
+              <figcaption>Вещь</figcaption>
+            </figure>
+            <figure>
+              <img src="/static/references/tryon-3.png?v=2" alt="Та же модель в чёрном платье">
+              <figcaption>Примерка</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="block">
+      <p class="eyebrow">Как это работает</p>
+      <h2>Три шага на вашем сайте</h2>
+      <div class="values values-row">
+        <article>
+          <h3>Карточка товара</h3>
+          <p>Берём фото вещи из каталога или со страницы товара.</p>
+        </article>
+        <article>
+          <h3>Фото покупателя</h3>
+          <p>Человек загружает свой снимок. Примерка считается на вашей стороне.</p>
+        </article>
+        <article>
+          <h3>Ключ магазина</h3>
+          <p>Остаётся на сервере магазина и не попадает в браузер покупателя.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pricing" class="block band">
+      <p class="eyebrow">Стоимость</p>
+      <h2>Две модели оплаты</h2>
+      <p class="lede">Подписка подходит, когда объём примерок понятен заранее. Процент — когда платить нужно только за заказ.</p>
+      <div class="plans" id="plans">
+        <p class="note">Загружаю условия…</p>
+      </div>
+    </section>
+
+    <section id="request" class="block request">
+      <div>
+        <p class="eyebrow">Заявка</p>
+        <h2>Подключить магазин</h2>
+        <p class="lede">Напишите, какая модель оплаты ближе. Мы ответим и откроем ключ для вашего сайта. Это заявка, не оплата.</p>
+      </div>
+      <form id="lead-form">
+        <label>
+          Магазин
+          <input name="shop" required maxlength="80" autocomplete="organization" placeholder="Название магазина">
+        </label>
+        <label>
+          Телефон или почта
+          <input name="contact" required maxlength="120" autocomplete="email" placeholder="shop@example.com">
+        </label>
+        <label>
+          Модель оплаты
+          <select name="plan" id="plan"></select>
+        </label>
+        <label>
+          Комментарий
+          <textarea name="note" maxlength="500" rows="4" placeholder="Город, сайт, примерный объём примерок"></textarea>
+        </label>
+        <button type="submit">Отправить заявку</button>
+        <p id="lead-status" class="status" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Примерочная</p>
+    <a href="/demo">Открыть пробную примерку</a>
+  </footer>
+  <script src="/static/landing.js"></script>
+</body>
+</html>

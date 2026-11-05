@@ -1,0 +1,8 @@
+# torch поставьте отдельно под свою CUDA, см. README.
+diffusers>=0.32
+transformers>=4.46
+accelerate>=1.0
+safetensors>=0.4
+sentencepiece>=0.2
+protobuf>=5.0
+peft>=0.13

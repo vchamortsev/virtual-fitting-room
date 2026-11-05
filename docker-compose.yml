@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      DATA_DIR: /data
+      FASHN_WEIGHTS_DIR: /weights/fashn-vton-1.5
+    volumes:
+      - ./data:/data
+      - ./weights:/weights

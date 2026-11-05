@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Виртуальная примерочная</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/demo.css?v=12">
+</head>
+<body>
+  <header class="nav">
+    <a class="mark" href="/">Примерочная</a>
+    <nav>
+      <a href="/#examples">Референсы</a>
+      <a href="/#pricing">Стоимость</a>
+      <a class="nav-try" href="/">На главную</a>
+    </nav>
+  </header>
+
+  <main class="studio">
+    <form id="tryon-form" class="panel">
+      <p class="eyebrow">Пробная примерка</p>
+      <h1>Загрузите человека и вещь</h1>
+      <p class="lede">Справа сразу виден готовый пример. Ваш кадр встанет на его место.</p>
+
+      <div class="pair">
+        <label class="drop" id="person-drop">
+          <img class="thumb" alt="">
+          <span><b>Фото человека</b><small>Выберите файл или перетащите сюда</small></span>
+          <input id="person" name="person_image" type="file" accept="image/jpeg,image/png,image/webp" required>
+        </label>
+        <label class="drop" id="garment-drop">
+          <img class="thumb" alt="">
+          <span><b>Вещь</b><small>Выберите файл или перетащите сюда</small></span>
+          <input id="garment" name="garment_image" type="file" accept="image/jpeg,image/png,image/webp">
+        </label>
+      </div>
+
+      <label>
+        Или ссылка на страницу товара
+        <input id="garment-url" name="garment_url" type="url" inputmode="url" placeholder="https://shop.example/product/coat" autocomplete="off">
+      </label>
+
+      <div class="pair">
+        <label>
+          Категория
+          <select name="category">
+            <option value="tops">Верх</option>
+            <option value="bottoms">Низ</option>
+            <option value="one-pieces">Платье или комбинезон</option>
+          </select>
+        </label>
+        <label>
+          Фото вещи
+          <select name="garment_photo_type">
+            <option value="flat-lay">На белом фоне</option>
+            <option value="model">На модели</option>
+          </select>
+        </label>
+      </div>
+
+      <button id="submit" type="submit">Примерить</button>
+      <p id="status" class="status" role="status">Модели ещё не загружены.</p>
+
+      <details>
+        <summary>Настройки</summary>
+        <div class="extra">
+          <label>
+            Ключ магазина
+            <input id="api-key" name="api_key" type="password" autocomplete="off" value="local-dev-key">
+          </label>
+          <label>
+            Модель
+            <select id="model" name="model"></select>
+          </label>
+          <p id="model-note" class="note"></p>
+          <label class="file">
+            Маска для CatVTON, белым — что заменить
+            <input name="mask_image" type="file" accept="image/jpeg,image/png,image/webp">
+          </label>
+          <label class="check">
+            <input name="segmentation_free" type="checkbox" value="true" checked>
+            Не зажимать новую вещь по силуэту старой одежды
+          </label>
+          <label>
+            Seed
+            <input name="seed" type="number" min="0" max="2147483647" value="42">
+          </label>
+          <label>
+            Ждать ответ, секунд
+            <input name="wait_seconds" type="number" min="0" max="120" value="0">
+          </label>
+        </div>
+      </details>
+    </form>
+
+    <section class="stage">
+      <div class="frame" aria-live="polite">
+        <img id="sample" src="/static/references/tryon.png" alt="Пример готовой примерки">
+        <img id="result" alt="" hidden>
+        <div id="progress" class="progress" hidden>
+          <div class="shirt" id="shirt">
+            <svg viewBox="0 0 200 240" aria-hidden="true">
+              <path class="shirt-ghost" d="M70 42C78 72 122 72 130 42L162 58L190 112L162 128L148 96L148 214L52 214L52 96L38 128L10 112L38 58Z"/>
+            </svg>
+            <div class="shirt-ink" id="shirt-ink">
+              <svg viewBox="0 0 200 240" aria-hidden="true">
+                <path d="M70 42C78 72 122 72 130 42L162 58L190 112L162 128L148 96L148 214L52 214L52 96L38 128L10 112L38 58Z"/>
+              </svg>
+            </div>
+            <p id="progress-label"></p>
+          </div>
+        </div>
+        <p id="warning" class="warning" hidden></p>
+        <p id="empty" class="empty">Это пример. Ваша примерка появится здесь.</p>
+      </div>
+    </section>
+  </main>
+  <script src="/static/demo.js?v=10"></script>
+</body>
+</html>

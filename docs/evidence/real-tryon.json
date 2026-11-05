@@ -1,0 +1,17 @@
+{
+  "verified_at_utc": "2026-11-05T21:07:02.763696+00:00",
+  "model": "fashn-vton-1.5",
+  "status": "succeeded",
+  "device": "xpu",
+  "device_name": "Intel(R) Arc(TM) 140T GPU (16GB)",
+  "torch": "2.15.0+xpu",
+  "steps": 20,
+  "seed": 42,
+  "cold_end_to_end_seconds": 154.45,
+  "width": 576,
+  "height": 768,
+  "result_sha256": "621a578ed47374fa931c156b972d175626ce2e97b59121f1d0fb65e7e0714292",
+  "person_sha256": "f58dfee0aa169e9764119759923bea2449bda64fe3fc07ff56539ce2474c74c2",
+  "garment_sha256": "653e6eb41d1d8239e296616994f832f96d8199d7188e5429bb8a77916c931f51",
+  "note": "One cold real inference through local API. Not a quality benchmark or a 5-second SLA."
+}
